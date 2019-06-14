@@ -1,0 +1,40 @@
+
+<div *ngIf="job" class="co    ntainer" style="margin:5vw 25vw 5vw; ">
+                  <h1 > Job Descrption </h1>
+
+                  <div class="card" style="font-size:2rem">
+                        <div class="card-body">
+                          <h2 class="card-title"><strong>{{job.post}}</strong> </h2> 
+                          <h2 class="card-subtitle"><strong>Domain:  {{job.domain}}  </strong> </h2> 
+                          <p class="card-text"> Location : {{job.location}} </p>
+                          <p class="card-text">Salary: {{job.salary}}</p>
+                          <a routerLink="/companyDetail" [queryParams]="{ company_id: job.provider._id}"> <strong> Company : {{job.provider.company_title}} </strong> </a>
+                          <p>Required Skills <strong>Required Skills: {{job.requiredSkills}} </strong> </p>          
+                          <p>Location {{job.location}} </p>             
+                          <p>Description: {{job.description}} </p>
+                          <button class="btn btn-primary " (click)="apply()"> Apply For Job </button>      
+                        </div>
+                  </div>
+</div>
+
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" (click)="closeModel()">&times;</span>
+        <h3> For Apply You must login or signup </h3>
+        <h4 class="text-center">
+             <button (click)="register()"> Sign Up</button><br>
+             <button (click)="login()"> Login</button>     
+          </h4>
+          </div>
+    
+    </div>
+
+
+
